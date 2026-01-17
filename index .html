@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhut Phung - Portfolio Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt">
+        <div class="scanline"></div>
+        <div class="terminal-container">
+            <!-- Terminal Header -->
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-maximize"></span>
+                </div>
+                <div class="terminal-title">nhut@portfolio:~$</div>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="terminal-body">
+                <div class="boot-sequence" id="bootSequence">
+                    <p>Loading portfolio.sys...</p>
+                    <p>Initializing user interface... [OK]</p>
+                    <p>Mounting resume data... [OK]</p>
+                    <p>Starting terminal session...</p>
+                    <p class="blink-cursor">Welcome to Nhut Phung's Portfolio v1.0</p>
+                </div>
+
+                <div class="terminal-content" id="terminalContent" style="display: none;">
+                    <!-- Navigation Menu -->
+                    <div class="nav-menu">
+                        <p class="prompt">nhut@portfolio:~$ ls -la commands/</p>
+                        <div class="command-list">
+                            <button class="cmd-btn" data-section="about">./about.sh</button>
+                            <button class="cmd-btn" data-section="education">./education.sh</button>
+                            <button class="cmd-btn" data-section="experience">./experience.sh</button>
+                            <button class="cmd-btn" data-section="skills">./skills.sh</button>
+                            <button class="cmd-btn" data-section="projects">./projects.sh</button>
+                            <button class="cmd-btn" data-section="leadership">./leadership.sh</button>
+                            <button class="cmd-btn" data-section="contact">./contact.sh</button>
+                        </div>
+                    </div>
+
+                    <!-- Content Display Area -->
+                    <div class="content-display" id="contentDisplay">
+                        <p class="prompt">nhut@portfolio:~$ cat welcome.txt</p>
+                        <div class="ascii-art">
+<pre>
+ _   _ _           _     ____  _                       
+| \ | | |__  _   _| |_  |  _ \| |__  _   _ _ __   __ _ 
+|  \| | '_ \| | | | __| | |_) | '_ \| | | | '_ \ / _` |
+| |\  | | | | |_| | |_  |  __/| | | | |_| | | | | (_| |
+|_| \_|_| |_|\__,_|\__| |_|   |_| |_|\__,_|_| |_|\__, |
+                                                  |___/ 
+</pre>
+                        </div>
+                        <p class="intro-text">
+                            > Electrical Engineering Student | Hardware & Software Developer<br>
+                            > University of Texas at Arlington | GPA: 3.49<br>
+                            > Expected Graduation: December 2027<br><br>
+                            > Type a command or click a button above to explore my portfolio...<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Command Input -->
+            <div class="command-input" id="commandInput" style="display: none;">
+                <span class="prompt-symbol">nhut@portfolio:~$</span>
+                <input type="text" id="cmdLine" placeholder="Type 'help' for available commands..." autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
